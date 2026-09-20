@@ -1487,7 +1487,7 @@ views.portfolioprojects = async function () {
   tbody.innerHTML = items.sort((a,b)=>(a.sort_order||0)-(b.sort_order||0)).map(p => `
     <tr>
       <td><div style="display:flex;align-items:center;gap:10px">
-        ${p.cover_image_url ? `<img src="${esc(p.cover_image_url.startsWith("http")||p.cover_image_url.startsWith("assets")? (p.cover_image_url.startsWith("assets")?"../"+p.cover_image_url:p.cover_image_url) : p.cover_image_url)}" alt="" style="width:40px;height:28px;object-fit:cover;border-radius:4px;border:1px solid var(--border)" onerror="this.style.display='none'">` : ""}
+        ${p.cover_image_url ? `<img src="${esc(p.cover_image_url)}" alt="" style="width:40px;height:28px;object-fit:cover;border-radius:4px;border:1px solid var(--border)" onerror="this.style.display='none'">` : ""}
         <span style="font-weight:600">${esc(p.title?.ar || p.title?.en || "—")}</span>
       </div></td>
       <td class="text-muted" style="font-size:.78rem">

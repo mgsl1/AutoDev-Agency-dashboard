@@ -1,4 +1,3 @@
-/* Extra features: home projects, testimonials, blog, FAQ, invoices, permissions, notifications, uploads */
 (function () {
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];

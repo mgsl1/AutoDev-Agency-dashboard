@@ -1,7 +1,6 @@
 /**
  * AutoDev Agency — Data Access Layer
  * -----------------------------------
- * حالياً: يعمل على localStorage (Mock Backend)
  * مستقبلاً: استبدل دوال هذا الملف باستدعاءات API / Supabase
  *          دون تغيير أي شيء في الواجهة.
  */
@@ -78,7 +77,7 @@ const DEFAULT_DATA = {
       total_projects: 2,
       total_revenue: 1850000,
       notes: "عميل مميز - دفع منتظم",
-      logo_url: "",
+      logo_url: "assets/logo-transparent.png",
       created_at: "2025-11-01T00:00:00Z",
       updated_at: "2026-09-10T00:00:00Z",
     },
@@ -139,7 +138,7 @@ const DEFAULT_DATA = {
         en: ["Live statistics", "Team management", "Time tracking", "Reports"],
       },
       year: "2026",
-      cover_image_url: "../assets/project-dashboard.webp",
+      cover_image_url: "assets/project-dashboard.webp",
       category_ids: ["c4", "c2"],
       technologies: ["React", "TypeScript", "Chart.js", "Supabase"],
       client_id: "cli_001",
@@ -171,7 +170,7 @@ const DEFAULT_DATA = {
         en: ["Responsive design", "Blog", "SEO", "High performance"],
       },
       year: "2026",
-      cover_image_url: "../assets/project-webapp.webp",
+      cover_image_url: "assets/project-webapp.webp",
       category_ids: ["c2", "c3"],
       technologies: ["Next.js", "Tailwind", "PostgreSQL"],
       client_id: null,
@@ -203,7 +202,7 @@ const DEFAULT_DATA = {
         en: ["Ordering", "Payment", "Tracking", "Loyalty"],
       },
       year: "2025",
-      cover_image_url: "../assets/project-coffee.png",
+      cover_image_url: "assets/project-coffee.png",
       category_ids: ["c1"],
       technologies: ["Flutter", "Firebase", "Stripe"],
       client_id: "cli_003",
@@ -916,7 +915,6 @@ const DEFAULT_DATA = {
   },
 };
 
-// ---------- Storage Helpers ----------
 function _load(key) {
   try {
     const raw = localStorage.getItem(STORAGE_PREFIX + key);
@@ -976,7 +974,6 @@ function _now() {
   return new Date().toISOString();
 }
 
-// ---------- Public API (CRUD) ----------
 const API = {
   // Generic
   list(collection) {

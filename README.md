@@ -64,4 +64,3 @@ dashboard/js/api.js
 - Chart.js للرسوم البيانية
 
 ---
-تم التطوير بواسطة Grok | xAI
